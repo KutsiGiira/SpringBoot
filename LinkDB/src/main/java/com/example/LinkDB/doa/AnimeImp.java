@@ -19,7 +19,6 @@ public class AnimeImp implements AnimeDao{
 
     @Override
     @Transactional
-
     public void save(Anime anime) {// Log before saving
         entityManager.persist(anime);
     }
@@ -30,7 +29,20 @@ public class AnimeImp implements AnimeDao{
 
     @Override
     public List<Anime> findAll() {
-        TypedQuery<Anime> query = entityManager.createQuery("FROM Anime order by name", Anime.class);
+        TypedQuery<Anime> query = entityManager.createQuery("FROM Anime", Anime.class);
         return query.getResultList();
+    }
+
+    @Override
+    @Transactional
+    public void update(Anime name) {
+         entityManager.merge(name);
+    }
+
+    @Override
+    @Transactional
+    public void delete(Integer id) {
+        Anime anime = entityManager.find(Anime.class, id);
+        entityManager.remove(anime);
     }
 }
