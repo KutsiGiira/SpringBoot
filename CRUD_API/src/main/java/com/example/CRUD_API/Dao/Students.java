@@ -20,10 +20,22 @@ public class Students implements Std{
         entityManager.persist(name);
     }
 
+
     @Override
     @Transactional
     public void delete(Integer id) {
         Student name = entityManager.find(Student.class, id);
         entityManager.remove(name);
+    }
+
+    @Override
+    @Transactional
+    public void update(Student s) {
+        entityManager.merge(s);
+    }
+
+    @Override
+    public Student findbyid(int id) {
+        return entityManager.find(Student.class, id);
     }
 }

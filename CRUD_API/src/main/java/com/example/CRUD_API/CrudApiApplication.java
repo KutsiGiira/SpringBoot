@@ -17,17 +17,25 @@ public class CrudApiApplication {
 	public CommandLineRunner cmdR(Std students){
 		return runner ->{
 //			createS(students);
-			deleteS(students);
+//			deleteS(students);
+			upd(students);
 		};
 	}
-//		private void createS(Std students){
+
+	private void upd(Std students) {
+		Student s = students.findbyid(2);
+		s.setName("updated");
+		students.update(s);
+	}
+
+	//		private void createS(Std students){
 //			Student s = new Student("KutsiGira");
 //			Student s1 = new Student("Black");
 //				students.create(s);
 //			 	students.create(s1);
 //
 //		}
-		private void deleteS(Std students){
-				students.delete(1);
-		}
+//		private void deleteS(Std students){
+//				students.delete(1);
+//		}
 }
