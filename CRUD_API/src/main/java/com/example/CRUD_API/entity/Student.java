@@ -28,7 +28,7 @@ public class Student {
     public void setId(int id) {
         this.id = id;
     }
-@Column(name = "name")
+    @Column(name = "name")
     private String name;
 
     public String getName() {
@@ -37,5 +37,12 @@ public class Student {
 
     public void setName(String name) {
         this.name = name;
+    }
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

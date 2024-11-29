@@ -7,6 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+
 @SpringBootApplication
 public class CrudApiApplication {
 	public static void main(String[] args) {
@@ -15,11 +16,18 @@ public class CrudApiApplication {
 	@Bean
 	public CommandLineRunner cmdR(Std students){
 		return runner ->{
-			createS(students);
+//			createS(students);
+			deleteS(students);
 		};
 	}
-		private void createS(Std students){
-			Student s = new Student("Black");
-				students.create(s);
+//		private void createS(Std students){
+//			Student s = new Student("KutsiGira");
+//			Student s1 = new Student("Black");
+//				students.create(s);
+//			 	students.create(s1);
+//
+//		}
+		private void deleteS(Std students){
+				students.delete(1);
 		}
 }
