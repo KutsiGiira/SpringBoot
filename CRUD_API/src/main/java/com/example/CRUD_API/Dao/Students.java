@@ -19,8 +19,6 @@ public class Students implements Std{
     public void create(Student name) {
         entityManager.persist(name);
     }
-
-
     @Override
     @Transactional
     public void delete(Integer id) {
