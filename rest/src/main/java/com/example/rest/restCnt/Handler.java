@@ -18,7 +18,7 @@ public class Handler {
     public ResponseEntity<Error> hanlder(Exception exc){
         Error d = new Error();
         d.setStatus(HttpStatus.BAD_REQUEST.value());
-        d.setMessage("Invalid Input");
+        d.setMessage(exc.getMessage());
         return new ResponseEntity<>(d, HttpStatus.BAD_REQUEST);
     }
 }
