@@ -1,6 +1,7 @@
 package com.example.RESTCRUD.Dao;
 
 import com.example.RESTCRUD.Entity.movies;
+import com.example.RESTCRUD.restCont.Movie;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
@@ -23,5 +24,23 @@ public class movieImp implements Int{
         TypedQuery<movies> query = entityManager.createQuery("FROM movies", movies.class);
         List<movies> movie = query.getResultList();
         return movie;
+    }
+
+    @Override
+    public Movie findById(int id) {
+    Movie m = entityManager.find(Movie.class, id);
+        return m;
+    }
+
+    @Override
+    public void delete(int id) {
+        Movie m = entityManager.find(Movie.class, id);
+        entityManager.remove(m);
+    }
+
+    @Override
+    public Movie save(Movie mov) {
+        Movie o = entityManager.merge(mov);
+        return o;
     }
 }
