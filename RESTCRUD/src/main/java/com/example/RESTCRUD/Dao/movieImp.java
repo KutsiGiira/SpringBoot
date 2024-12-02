@@ -1,14 +1,11 @@
 package com.example.RESTCRUD.Dao;
 
 import com.example.RESTCRUD.Entity.movies;
-import com.example.RESTCRUD.restCont.Movie;
-import jakarta.persistence.Entity;
+import com.example.RESTCRUD.restCont.MovieController;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 @Repository
@@ -27,20 +24,20 @@ public class movieImp implements Int{
     }
 
     @Override
-    public Movie findById(int id) {
-    Movie m = entityManager.find(Movie.class, id);
+    public movies findById(int id) {
+    movies m = entityManager.find(movies.class, id);
         return m;
     }
 
     @Override
     public void delete(int id) {
-        Movie m = entityManager.find(Movie.class, id);
+        movies m = entityManager.find(movies.class, id);
         entityManager.remove(m);
     }
 
     @Override
-    public Movie save(Movie mov) {
-        Movie o = entityManager.merge(mov);
+    public movies save(movies mov) {
+        movies o = entityManager.merge(mov);
         return o;
     }
 }

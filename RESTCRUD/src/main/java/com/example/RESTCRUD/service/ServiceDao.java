@@ -1,9 +1,8 @@
 package com.example.RESTCRUD.service;
 
-import com.example.RESTCRUD.Dao.Int;
 import com.example.RESTCRUD.Dao.movieImp;
 import com.example.RESTCRUD.Entity.movies;
-import com.example.RESTCRUD.restCont.Movie;
+import com.example.RESTCRUD.restCont.MovieController;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,7 +22,7 @@ public class ServiceDao implements ServiceInt{
     }
 
     @Override
-    public Movie findById(int id) {
+    public movies findById(int id) {
         return movi.findById(id);
     }
 @Transactional
@@ -33,7 +32,7 @@ public class ServiceDao implements ServiceInt{
     }
 @Transactional
     @Override
-    public Movie save(Movie mov) {
+    public movies save(movies mov) {
         return movi.save(mov);
     }
 }
