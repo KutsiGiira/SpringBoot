@@ -34,4 +34,15 @@ public class MovieController {
         movies n = service.save(m);
         return n;
     }
+    @PutMapping("/list")
+    public movies up(@RequestBody movies m){
+        movies upd = service.save(m);
+        return upd;
+    }
+    @DeleteMapping("/list/{id}")
+    public String del(@PathVariable int id){
+        movies de = service.findById(id);
+        service.delete(de.getId());
+        return "Deleted movie " + id;
+    }
 }
