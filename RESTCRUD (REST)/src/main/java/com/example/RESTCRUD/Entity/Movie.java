@@ -4,17 +4,16 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "movies")
-public class movies {
+public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(name = "name")
     private String name;
 
-    public movies() {
+    public Movie() {
     }
-
-    public movies(String name) {
+    public Movie(String name) {
         this.name = name;
     }
 
