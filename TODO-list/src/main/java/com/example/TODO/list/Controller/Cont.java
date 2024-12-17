@@ -24,7 +24,7 @@ public class Cont {
         return "From";
     }
     @GetMapping("/list")
-    public String req(@RequestParam("task") String task){
+    public String req(@RequestParam String task){
         return "List";
     }
 }

@@ -6,21 +6,23 @@
     <title>Title</title>
 </head>
 <body>
-helo
-<span th:text="${param.task}"></span>
-<!--    <table class="table" style="text-align: center;">-->
-<!--        <thead class="table-light">-->
-<!--        <tr>-->
-<!--            <th>-->
-<!--                Today's Tasks-->
-<!--            </th>-->
-<!--        </tr>-->
-<!--        </thead>-->
-<!--        <tbody>-->
-<!--        <tr th:each="msg : ${t}" style="border-color: red;" >-->
-<!--            <td th:text="${todo.task}">-->
-<!--            </td>-->
-<!--        </tbody>-->
-<!--</table>-->
+<form th:action="@{/from}" th:methode="get">
+    <table class="table" style="text-align: center;">
+        <thead class="table-light">
+        <tr>
+            <th>
+                Today's Tasks
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="${param.task}">
+            </td>
+        </tr>
+        </tbody>
+        <button type="submit" th:text="Back"></button>
+    </table>
+</form>
 </body>
 </html>
