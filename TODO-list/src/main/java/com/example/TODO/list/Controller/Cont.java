@@ -5,25 +5,26 @@ import com.example.TODO.list.Service.Tools;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
 @Controller
 public class Cont {
     public Tools tool;
-    public String req;
     public Cont(Tools tool) {
         this.tool = tool;
     }
     @GetMapping("/from")
-    public String list(){
+    public String list(Model m){
+        Todoo todo = new Todoo();
+        m.addAttribute("todo", todo);
         return "From";
     }
     @GetMapping("/list")
-    public String todayTask(Model m){
-        List<Todoo> msg = tool.show();
-        m.addAttribute("temp", msg);
-        m.addAttribute("t", req);
+    public String req(@RequestParam("task") String task){
         return "List";
     }
 }
