@@ -14,7 +14,12 @@ public class Tools implements Tool{
         this.Lrepo = Lrepo;
     }
     @Override
-    public List<Todoo>show() {
+    public List<Todoo>findAll() {
         return Lrepo.findAll();
+    }
+
+    @Override
+    public Todoo save(Todoo Ntask) {
+        return Lrepo.save(Ntask);
     }
 }

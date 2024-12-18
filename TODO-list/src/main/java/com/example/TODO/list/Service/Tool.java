@@ -6,5 +6,6 @@ import com.example.TODO.list.Model.Todoo;
 import java.util.List;
 
 public interface Tool {
-    List<Todoo> show();
+    List<Todoo>findAll();
+    Todoo save(Todoo Ntask);
 }
