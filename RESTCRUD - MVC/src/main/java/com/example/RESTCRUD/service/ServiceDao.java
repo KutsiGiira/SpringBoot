@@ -36,7 +36,7 @@ public class ServiceDao implements ServiceInt{
     }
     @Override
     public void delete(int id) {
-        movi.deleteById(id);
+         movi.deleteById(id);
     }
     @Override
     public movies save(movies mov) {

@@ -23,4 +23,26 @@ public class MovieController {
         m.addAttribute("movies", theMovie);
         return "ViewList";
     }
+    @GetMapping("/add")
+    public String add(Model m){
+        movies add = new movies();
+        m.addAttribute("add", add);
+        return "addForm";
+    }
+    @PostMapping("/saved")
+    public String save(@ModelAttribute("add") movies theMovie){
+        serviceDao.save(theMovie);
+        return "redirect:/list";
+    }
+    @GetMapping("/update")
+    public String update(@RequestParam("movieId")int idd, Model m){
+        movies mm = serviceDao.findById(idd);
+        m.addAttribute("up", mm);
+        return"redirect:/add";
+    }
+    @GetMapping("/delete")
+    public String delete(@RequestParam("movieId")int idd){
+        serviceDao.delete(idd);
+        return "redirect:/list";
+    }
 }
