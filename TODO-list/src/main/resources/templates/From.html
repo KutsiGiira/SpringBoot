@@ -11,7 +11,7 @@
 <!--</form>-->
 
 <form th:action="@{/add}" th:object="${todo}" th:methode="post">
-  Test <input type="text" th:field="*{task}">
+ <input type="text" th:field="*{task}">
     <br>
   <button type="submit" th:text="Submit"></button>
 </form>

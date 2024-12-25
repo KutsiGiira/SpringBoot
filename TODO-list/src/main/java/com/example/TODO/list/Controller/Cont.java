@@ -18,17 +18,18 @@ public class Cont {
     }
     @GetMapping("/from")
     public String list(Model m){
-        Todoo todo = new Todoo();
+        List<Todoo> todo = tool.findAll();
         m.addAttribute("todo", todo);
         return "From";
     }
     @PostMapping("/add")
-    public String addTask(@ModelAttribute Todoo todo) {
-        tool.save(todo); // Save the task to the database
-        return "List"; // Redirect to the form page after saving
+    public String addTask(Model m) {
+        Todoo tod = new Todoo();
+        m.addAttribute("added", tod);
+        return "List";
     }
 
-    @GetMapping("/db")
+    @GetMapping("/main")
     public String find(Model m){
         List<Todoo> item = tool.findAll();
         m.addAttribute("saved", item);

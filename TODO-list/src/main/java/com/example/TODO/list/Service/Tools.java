@@ -19,7 +19,7 @@ public class Tools implements Tool{
     }
 
     @Override
-    public Todoo save(Todoo Ntask) {
-        return Lrepo.save(Ntask);
+    public Todoo save(Todoo tool) {
+        return Lrepo.save(tool);
     }
 }

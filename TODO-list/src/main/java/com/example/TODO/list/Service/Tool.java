@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface Tool {
     List<Todoo>findAll();
-    Todoo save(Todoo Ntask);
+    Todoo save(Todoo tool);
 }
