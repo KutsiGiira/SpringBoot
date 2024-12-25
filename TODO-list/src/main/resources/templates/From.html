@@ -5,15 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-<!--<form th:action="@{list}" th:methode="get">-->
-<!--    <input th:text="username" name="task">-->
-<!--    <button type="submit" th:text="Submit"></button>-->
-<!--</form>-->
-
-<form th:action="@{/add}" th:object="${todo}" th:methode="post">
- <input type="text" th:field="*{task}">
-    <br>
-  <button type="submit" th:text="Submit"></button>
+<form th:action="@{/list{">
+    <input th:field="task">
 </form>
 </body>
 </html>

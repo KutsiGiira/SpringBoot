@@ -16,23 +16,18 @@ public class Cont {
     public Cont(Tools tool) {
         this.tool = tool;
     }
-    @GetMapping("/from")
-    public String list(Model m){
-        List<Todoo> todo = tool.findAll();
-        m.addAttribute("todo", todo);
-        return "From";
-    }
-    @PostMapping("/add")
-    public String addTask(Model m) {
-        Todoo tod = new Todoo();
-        m.addAttribute("added", tod);
-        return "List";
-    }
-
     @GetMapping("/main")
     public String find(Model m){
         List<Todoo> item = tool.findAll();
         m.addAttribute("saved", item);
         return "List";
+    }
+    @GetMapping("/add")
+    public String add(){
+        return "From";
+    }
+    @PostMapping("/save")
+    public String save(){
+        return "From";
     }
 }
