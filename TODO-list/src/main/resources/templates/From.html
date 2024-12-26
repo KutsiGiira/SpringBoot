@@ -5,8 +5,9 @@
     <title>Title</title>
 </head>
 <body>
-<form th:action="@{/list{">
-    <input th:field="task">
+<form th:action="@{/save}" th:object="${ad}" method="post">
+    <input th:field="*{task}">
+    <button type="submit">SAVE</button>
 </form>
 </body>
 </html>

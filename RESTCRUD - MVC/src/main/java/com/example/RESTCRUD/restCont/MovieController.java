@@ -45,4 +45,4 @@ public class MovieController {
         serviceDao.delete(idd);
         return "redirect:/list";
     }
-}e
+}

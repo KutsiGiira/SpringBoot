@@ -23,11 +23,14 @@ public class Cont {
         return "List";
     }
     @GetMapping("/add")
-    public String add(){
+    public String add(Model m){
+        Todoo ad = new Todoo();
+        m.addAttribute("ad", ad);
         return "From";
     }
     @PostMapping("/save")
-    public String save(){
-        return "From";
+    public String save(@ModelAttribute("ad") Todoo add){
+        tool.save(add);
+        return "redirect:/main";
     }
 }
