@@ -34,3 +34,4 @@ public class Cont {
         return "redirect:/main";
     }
 }
+//still need delete and edit function + some style
