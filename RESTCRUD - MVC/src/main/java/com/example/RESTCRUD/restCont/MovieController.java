@@ -41,8 +41,8 @@ public class MovieController {
         return"redirect:/add";
     }
     @GetMapping("/delete")
-    public String delete(@RequestParam("movieId")int idd){
-        serviceDao.delete(idd);
+    public String delete(@RequestParam("movieId")int id){
+        serviceDao.delete(id);
         return "redirect:/list";
     }
 }
