@@ -34,7 +34,10 @@ public class Config {
         )
                 .formLogin(form ->
                         form.loginPage("/myLogin").loginProcessingUrl("/logged").permitAll()
-                        );
+                        )
+                .logout(logout ->
+                        logout.permitAll()
+                );
         return http.build();
     }
 }
