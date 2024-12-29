@@ -13,6 +13,14 @@
         Role :<span sec:authentication="principal.authorities"></span>
     </p>
 </div>
+<p>
+    <a th:href="@{/admin}">Admin Page</a>
+</p>
+<hr>
+    <p>
+        <a th:href="@{/manager}">Manager Page</a>
+    </p>
+<hr>
 <form action="#" th:action="@{/logout}" method="post">
     <button type="submit">Log Out</button>
 </form>

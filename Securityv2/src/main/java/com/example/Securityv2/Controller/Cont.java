@@ -9,4 +9,8 @@ public class Cont {
     public String homePage(){
         return "home";
     }
+    @GetMapping("/admin")
+    public String Admin(){
+        return "admin";
+    }
 }

@@ -12,6 +12,12 @@ import org.springframework.security.web.SecurityFilterChain;
 public class Config {
     @Bean
     public InMemoryUserDetailsManager inMemoryUserDetailsManager(){
+        UserDetails user = User.builder()
+                .username("user")
+                .password("{noop}user")
+                .roles("user")
+                .build();
+
         UserDetails black = User.builder()
                 .username("black")
                 .password("{noop}black")
@@ -24,7 +30,7 @@ public class Config {
                 .roles("manager")
                 .build();
 
-        return new InMemoryUserDetailsManager(black, kustigira);
+        return new InMemoryUserDetailsManager(user,black, kustigira);
     }
 
     @Bean
