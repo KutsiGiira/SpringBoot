@@ -13,4 +13,8 @@ public class Cont {
     public String Admin(){
         return "admin";
     }
+    @GetMapping("/manager")
+    public String manage(){
+        return "Manager";
+    }
 }

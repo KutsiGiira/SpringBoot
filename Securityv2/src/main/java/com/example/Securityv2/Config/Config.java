@@ -21,13 +21,13 @@ public class Config {
         UserDetails black = User.builder()
                 .username("black")
                 .password("{noop}black")
-                .roles("admin, manager")
+                .roles("user","admin, manager")
                 .build();
 
         UserDetails kustigira = User.builder()
                 .username("kutsigira")
                 .password("{noop}kutsigira")
-                .roles("manager")
+                .roles("user","manager")
                 .build();
 
         return new InMemoryUserDetailsManager(user,black, kustigira);
@@ -36,7 +36,11 @@ public class Config {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         http.authorizeHttpRequests(configurer ->
-                configurer.anyRequest().authenticated()
+                configurer
+                        .requestMatchers("/").hasRole("user")
+                        .requestMatchers("/manager/**").hasRole("manager")
+                        .requestMatchers("/admin/**").hasRole("admin")
+                        .anyRequest().authenticated()
         )
                 .formLogin(form ->
                         form.loginPage("/myLogin").loginProcessingUrl("/logged").permitAll()
