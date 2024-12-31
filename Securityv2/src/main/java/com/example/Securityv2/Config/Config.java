@@ -42,6 +42,7 @@ public class Config {
                         .requestMatchers("/admin/**").hasRole("admin")
                         .anyRequest().authenticated()
         )
+
                 .formLogin(form ->
                         form.loginPage("/myLogin").loginProcessingUrl("/logged").permitAll()
                         )
