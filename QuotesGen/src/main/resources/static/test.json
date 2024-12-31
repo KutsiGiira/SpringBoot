@@ -1,0 +1,12 @@
+{
+  "gen" : [
+    {
+      "fn": "Black",
+      "Age": 20
+    },
+    {
+      "fn": "KutsiGira",
+      "Age":25
+    }
+  ]
+}

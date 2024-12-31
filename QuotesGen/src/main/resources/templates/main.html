@@ -5,9 +5,12 @@
     <title>Main</title>
 </head>
 <body>
-<form th:action="@{/main}" method="get">
-    <p>generate here</p>
-    <button type="submit">Generate Here</button>
-</form>
+<h1>Quote of today</h1>
+<div th:if="${error}">
+    <p th:text="${error}"></p>
+</div>
+<ul>
+    <li th:each="quote : ${quote}" th:text="${quote}"></li>
+</ul>
 </body>
 </html>
