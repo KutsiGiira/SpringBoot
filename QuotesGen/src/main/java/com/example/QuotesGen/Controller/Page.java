@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class Page {
@@ -19,23 +20,21 @@ public class Page {
     public Page(Serv serv){
         this.serv = serv;
     }
-    @GetMapping("/main")
-    public String mainPage(Model m) throws IOException {
-        try {
-            Mod quote = serv.readJsonFile();
-            m.addAttribute("quote", quote);
-        } catch (IOException e) {
-            e.printStackTrace();
-            m.addAttribute("error", "Unable to load quotes at this time.");
-        }
-        return "main";
-    }
+//    @GetMapping("/main")
+//    public String mainPage(Model m) throws IOException {
+//        try {
+//            Mod quote = serv.readJsonFile();
+//            m.addAttribute("quote", quote);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            m.addAttribute("error", "Unable to load quotes at this time.");
+//        }
+//        return "main";
+//    }
     @GetMapping("/json")
-    @ResponseBody
-    public List<Mod> Json(Model m){
-        List<Mod> json = new ArrayList<Mod>();
-
-        m.addAttribute("quote", json);
-        return json;
+    public String viewJson(Model model) {
+        List<Map<String, Object>> jsonData = serv.getJsonData();
+        model.addAttribute("quote", jsonData);
+        return "json-view";
     }
 }

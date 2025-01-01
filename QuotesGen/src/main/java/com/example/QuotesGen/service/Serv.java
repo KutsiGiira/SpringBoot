@@ -10,13 +10,16 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class Serv {
-    public Mod readJsonFile() throws IOException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        ClassPathResource resource = new ClassPathResource("static/base.json");
-        InputStream jsonInput = resource.getInputStream();
-        return objectMapper.readValue(jsonInput, Mod.class);
+    public List<Map<String, Object>> getJsonData() {
+        ObjectMapper mapper = new ObjectMapper();
+        try (InputStream inputStream = getClass().getResourceAsStream("/data/test.json")) {
+            return mapper.readValue(inputStream, new TypeReference<List<Map<String, Object>>>() {});
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to read JSON file", e);
+        }
     }
 }
