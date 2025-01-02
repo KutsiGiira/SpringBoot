@@ -3,18 +3,22 @@ package com.example.Json2db.entity;
 
 import jakarta.persistence.*;
 
-import java.awt.geom.GeneralPath;
-
 @Entity
 @Table(name="quotetest")
-public class Model {
+public class Quote {
     @Id
-    @GeneratedValue(strategy =GenerationType.AUTO)
+    @GeneratedValue(strategy =GenerationType.IDENTITY)
     private int id;
     @Column(name="Name")
     private String name;
     @Column(name="Author")
     private String author;
+
+
+    public Quote( String name, String author) {
+        this.name = name;
+        this.author = author;
+    }
 
     public int getId() {
         return id;
