@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf29c692-b79e-4cb3-8e15-297ba4dd7d99" name="Changes" comment="" />
+    <list default="true" id="cf29c692-b79e-4cb3-8e15-297ba4dd7d99" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../QuotesGen/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuotesGen/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuotesGen/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuotesGen/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuotesGen/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuotesGen/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuotesGen/src/main/java/com/example/QuotesGen/Controller/Page.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuotesGen/src/main/java/com/example/QuotesGen/QuotesGenApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuotesGen/src/main/java/com/example/QuotesGen/model/Mod.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuotesGen/src/main/java/com/example/QuotesGen/service/Serv.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuotesGen/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuotesGen/src/main/resources/static/base.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuotesGen/src/main/resources/static/test.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuotesGen/src/main/resources/templates/main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QuotesGen/src/test/java/com/example/QuotesGen/QuotesGenApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,16 +48,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.QuotesGeneratorApplication.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/SpringB/SpringBoot/QuotesGen"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.QuotesGeneratorApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Apps/Building/QuotesGen&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

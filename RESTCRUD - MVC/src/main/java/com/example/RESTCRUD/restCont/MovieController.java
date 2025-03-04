@@ -7,6 +7,7 @@ import com.example.RESTCRUD.service.ServiceInt;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -35,9 +36,9 @@ public class MovieController {
         return "redirect:/list";
     }
     @GetMapping("/update")
-    public String update(@RequestParam("movieId")int idd, Model m){
+    public String update(@RequestParam("movieId")int idd, RedirectAttributes re){
         movies mm = serviceDao.findById(idd);
-        m.addAttribute("up", mm);
+        re.addFlashAttribute("up", mm);
         return"redirect:/add";
     }
     @GetMapping("/delete")

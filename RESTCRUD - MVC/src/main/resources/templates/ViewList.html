@@ -23,8 +23,7 @@
     <tr th:each="temp : ${movies}">
       <td th:text="${temp.name}"></td>
       <td>
-      <a th:href="@{/update(movieId=${temp.id})}" class="btn btn-info btn-sm">Update</a>
-        <a th:href="@{/delete(movieId=${temp.id})}" class="btn btn-danger btn-sm" onclick="if (confirm('are u sure u want to delete')) return true">delete</a>
+        <a th:href="@{/delete(movieId=${temp.id})}" class="btn btn-danger btn-sm">Delete</a>
       </td>
     </tr>
     </tbody>
