@@ -11,6 +11,9 @@ public class Student {
         this.mark = mark;
     }
 
+    public Student() {
+    }
+
     public int getId() {
         return id;
     }
