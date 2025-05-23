@@ -27,7 +27,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
-
+        //JWT WORKING GET PASSED TO HTTP HEADER
         final String authHeader = request.getHeader("Authorization");
 
         String username = null;
