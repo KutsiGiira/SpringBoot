@@ -15,7 +15,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class MyUserDetailsService implements UserDetailsService {
-
+//checks if user in db or no
     @Autowired
     public Users users;
 
