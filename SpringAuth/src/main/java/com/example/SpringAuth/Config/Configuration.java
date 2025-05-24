@@ -34,10 +34,6 @@ public class Configuration {
                         //csrf b7al wa7d sarot ma7dk dakhl l dik dar katb9a 3ndk walakin m3a katkhrj aykhsk sarot jdid
                         .csrf(customizer -> customizer.disable())
 
-                        //hadi katb9a t3ti acces l kola blasa f site la knti mlogi wla la
-                        //hadi anyRequest ya3ni ayi url jaaha ila drti .permitAll()
-                        // blast authenticated kat3ti l klch wila drti requestmatchers("/blasa li khaso ilogi fiha")
-                        //zid 9lb w 9ra 3liha ktr
                         .authorizeHttpRequests((request -> request
                                 .requestMatchers("/addusers", "/login").permitAll()
                                 .anyRequest().authenticated()))

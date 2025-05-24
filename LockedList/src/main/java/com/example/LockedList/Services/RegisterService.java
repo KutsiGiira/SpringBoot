@@ -4,14 +4,14 @@ import com.example.LockedList.Entity.DTO.RegisterInfo;
 import com.example.LockedList.Entity.UserRepo;
 import com.example.LockedList.Entity.Users;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
 public class RegisterService {
-
-    private final UserRepo userrepo;
+@Autowired
+    private  UserRepo userrepo;
     private final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
     public void register(RegisterInfo info) {
@@ -22,6 +22,7 @@ public class RegisterService {
         user.setUsername(info.getUsername());
         user.setPassword(encoder.encode(info.getPassword()));
         user.setEmail(info.getEmail());
+        System.out.println(user.getUsername() +  user.getPassword() + user.getEmail());
         userrepo.save(user);
     }
 }
